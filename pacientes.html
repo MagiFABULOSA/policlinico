@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+</head>
+<body>
+    <h2>PACIENTES</h2>
+    <h3>Registrar paciente</h3>
+    <form action="resultado.html" method="get">
+    <fieldset>
+    <div>
+        <label for="ci">C.I:</label> 
+        <br> 
+        <input type="number" name="ci" id="ci" >
+    </div>
+    <div>
+        <label for="nombre">Nombre:</label>
+        <br>
+        <input type="text" name="nombre" id="nombre" required>
+    </div>
+    <div>
+        <label for="apellido">Apellido: </label>
+        <br>
+        <input type="text" name="apellido" id="apellido" required>
+    </div>
+    <div>
+        <label for="direccion">Direccion:</label>
+        <br>
+        <input type="text" name="direccion" id="direccion">
+    </div>
+    <div>
+        <label for="telefono">Telefono:</label>
+        <br>
+        <input type="number" name="telefono" id="telefono">
+    </div>
+    <div>
+        <label for="correo">Correo:</label>
+        <br>
+        <input type="email" name="correo" id="correo">
+    </div>
+    <div>
+        <label for="Sexo">Sexo:</label>
+        <br>
+        <input type=radio name="sexo" value="a" checked> Masculino
+        <input type=radio name="sexo" value="b" > Femenino
+    </div>
+    <br>
+    <div>
+        <label for="fechanacimiento">Fecha de nacimiento: </label>
+        <br>
+        <input type="date" name="fechanacimiento" id="fechanacimiento">
+    </div>
+    <div>
+        <label for="nacionalidad">Nacionalidad:</label>
+        <br>
+        <input type="text" name="nacionalidad" id="nacionalidad">
+    </div>
+    <div>
+        <label for="ciudad">Ciudad de Residencia:</label>
+        <br>
+        <input type="text" name="ciudad" id="ciudad">
+    </div>
+    <div>
+        <label for="estadocivil">Estado Civil</label>
+        <br>
+        <select name="estadocivil" id="estadocivil">Estado Civil 
+            <option value="soltero">Soltero/a</option>
+            <option value="casado">Casado/a</option>
+            <option value="divorciado">Divorciado/a</option>
+            <option value="viudo">Viudo/a</option>
+            <option value="menor">Menor de edad</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="edad">Edad</label> 
+        <input type="number" name="edad" id="edad">
+        <label for="peso">Peso</label>
+        <input type="text" name="peso" id="peso">
+    </div>
+    <div>
+        <input type="checkbox" name="diagrap1"> PA
+        <input type="checkbox" name="diagrap2"> FC
+        <input type="checkbox" name="diagrap3"> FR
+    </div>
+    </fieldset>
+    <br>
+    <div>
+        <label for="fechaconsulta">Fecha de consulta</label>
+        <input type="date">
+    </div>
+    <div>
+        <label for="HEA">HEA</label>
+        <textarea name="hea" id="hea" cols="50" rows="5"></textarea>
+    </div>
+    <div>
+        <label for="diagnostico">Diagnostico</label>
+        <textarea name="diag" id="diag" cols="50" rows="5"></textarea>
+    </div>
+    <div>
+        <label for="plan">Plan</label>
+        <textarea name="plan" id="plan" cols="50" rows="5"></textarea>
+    </div>
+    <br>
+    <div>
+        <label for="cie-10">CIE10: </label>
+        <input type="checkbox" name="die1"> 1
+        <input type="checkbox" name="die2"> 2
+        <input type="checkbox" name="die3"> 3
+        <input type="checkbox" name="die4"> 4
+        <input type="checkbox" name="die5"> 5
+    </div>
+    <br>
+    <button type="reset">CANCELAR</button>
+    <button type="submit">GUARDAR</button>
+</form>
+</body>
+</html>

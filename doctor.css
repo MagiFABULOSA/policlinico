@@ -1,0 +1,70 @@
+body{
+    background-image: url(https://fondosmil.com/fondo/20887.jpg);
+    background-size: 100%;
+}
+
+.icono{
+    font-size: 150px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.main{
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.topbar{
+    background-color: teal;
+    overflow: hidden;
+}
+
+.topbar a {
+    float: right;
+    color: whitesmoke;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar{
+    background-color: rgba(0, 0, 0, 0.897);
+    color: white;
+    width: 350px;
+    margin-top: 5px;
+}
+
+.mt-3{
+    margin-left: 20px;
+}
+
+.sidebar a{
+    margin-left: 5px;
+    display: block;
+    color: white;
+    padding-bottom: 10px;
+    font-size:20px;
+    text-decoration: none;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   
+}
+.content {
+    background-color: whitesmoke;
+    margin-left: 355px;
+    margin-top: -383px;
+    padding-left: 30px;
+}
+
+.content-1 {
+    background-color: whitesmoke;
+    margin-left: 355px;
+    padding-left: 30px;
+    
+}
