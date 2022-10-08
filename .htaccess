@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^login$ index.html
+RewriteRule ^registrar-paciente$ registrar-paciente.html
+RewriteRule ^registrar-alumnos$ alumnos.html
+RewriteRule ^perfil$ doctor.html
+RewriteRule ^historial$ historial.html
