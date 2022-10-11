@@ -1,8 +1,10 @@
 <?php
+//Iniciar la sesión
 session_start();
 require 'config/connection.php';
 require 'includes/auth_validate.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,29 +20,28 @@ require 'includes/auth_validate.php';
     </style>
 </head>
 <body>
+    
+    //MENU HORIZONTAL
     <div class="nav-bar">
         <a class="logo" href="admin_panel"><img class="site-logo" src="assets/img/logo.png" alt=""></a>
         <nav class="menuhorizontal">
-            <a href="logout.php"><i class="fa-solid fa-person-walking-arrow-right"></i> Cerrar Sesión</a> <!--este apartado esta para cerrar la sesion de la cuenta ingresada -->
+            <a href="logout.php"><i class="fa-solid fa-person-walking-arrow-right"></i> Cerrar Sesión</a>
         </nav>
     </div>
+    
+    //MENU VERTICAL
     <div class="all-1">
             <div class="menu">
                 <nav class="menuvertical-1">
                     <a href="admin_panel"><i class="fa-solid fa-house-medical"></i> Inicio</a> 
-                    <!--este apartado esta para abrir los usuarios registrados -->
                     <a href="register_doctor"><i class="fa-solid fa-user-doctor"></i> Doctor</a>
-                    <!--este apartado esta para abrir los profesionales encargados -->
                     <a href="register_student"><i class="fa-solid fa-graduation-cap"></i> Alumnos</a>
-                    <!--este apartado esta para abrir los usuarios registrados -->
                     <a href="register_specialty"><i class="fa-solid fa-stethoscope"></i> Especialidades</a>
-                    <!--este apartado esta para abrir la lista de las especialidades -->
                     <a href="users"><i class="fa-solid fa-user"></i> Usuario</a> 
-                    <!--este apartado esta para abrir los usuarios registrados -->
                     <a href="about.html"><i class="fa-solid fa-circle-question"></i> Ayuda</a>
-                    <!--este apartado esta para abrir el menu de ayuda -->
                 </nav>
             </div>
+        
         <div class="form-5">
             <div class="form-2">
                 <h1>REGISTRAR USUARIO</h1>
@@ -76,19 +77,28 @@ require 'includes/auth_validate.php';
     </div>
     <?php
     require 'config/connection.php';
+
+    //VERIFICACION USERNAME
     if(isset($_POST['username'])){
         $username = $_POST["username"];
         $passwd = $_POST["passwd"];
         $privilege = $_POST["privilege"];
+        //Busca en la BD si existe o no el usuario
         if(isset($_POST["buttonregistrar"])){
             $db_consulting="SELECT*FROM login where username='$username'"; 
             $result = mysqli_query($conn, $db_consulting);
             $row = mysqli_num_rows($result);
             $view = mysqli_fetch_array($conn, $db_consulting);
+            
+            //REGISTRAR NUEVO USUARIO
             if($row==0){
+                //Encriptación de la contraseña en BD
                 $password_encrypted = password_hash($passwd, PASSWORD_BCRYPT);
+                //Insertar datos del nuevo usuario a la BD
                 $sql = "INSERT INTO login (username, passwd, privilege) VALUES ('$username', '$password_encrypted', '$privilege')";
+                
                 if($result){
+                    //Usuario existente
                     echo "<script> alert('Usuario registrado: $username');window.location= 'register_user.php' </script>";
                 }
                 else 
@@ -96,6 +106,8 @@ require 'includes/auth_validate.php';
                     echo "Error: " .$sql."<br>".mysql_error($conn);
                 }
             }
+            
+            //
             else{
                     echo "<script> alert('No puedes registrar a este usuario: $username');window.location= 'register_user' </script>";
             }
